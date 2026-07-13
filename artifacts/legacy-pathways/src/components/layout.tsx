@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import headerLogo from "../assets/lp-header-logo-transparent.png";
-import badgeLogo from "@assets/3163ECBD-EAAB-45B1-9642-55A4004216DA_1783940742231.PNG";
+import badgeLogoWhite from "../assets/lp-badge-white.png";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -80,13 +80,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <footer className="bg-secondary text-secondary-foreground mt-auto py-16">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-2 space-y-6">
-            <img src={headerLogo} alt="Legacy Pathways" className="h-12 w-auto invert" />
+            <img src={badgeLogoWhite} alt="Legacy Pathways" className="h-28 w-auto" />
             <p className="text-muted text-sm max-w-sm font-serif">
               Preserving and presenting the stories and legacy of Māori servicemen connected with Ōhinemutu, Te Arawa and Muruika Urupā.
             </p>
-            <div className="flex gap-4 pt-4">
-               <img src={badgeLogo} alt="Legacy Pathways Badge" className="h-16 w-16 opacity-80" />
-            </div>
           </div>
           <div>
             <h4 className="font-serif text-lg mb-4 text-white">Explore</h4>
