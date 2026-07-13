@@ -1,1 +1,2 @@
 - [Harvesting 28maoribattalion.org.nz](harvest-28mb-sources.md) — Cloudflare blocks plain fetch/curl; use rendered webFetch for HTML and web.archive.org `web/2024id_/` mirrors for images; persist long-loop progress to disk.
+- [Orval codegen pitfalls](orval-codegen-pitfalls.md) — no `format: email` in the OpenAPI spec (Zod v3 vs v4); boolean query params must be parsed from raw req.query, not zod.coerce.boolean.

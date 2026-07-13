@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "isBXIkNkbJD8AbVWQdidO"
+uri = "file://artifacts/legacy-pathways/public/hero-bg.png"
+type = "image"
+title = "Archival memorial landscape"
+
+[[generated]]
+id = "6o2lKd1XXbeNLN3srjEuJ"
+uri = "file://artifacts/legacy-pathways/public/tours-bg.png"
+type = "image"
+title = "Italian war cemetery"
+
+[[generated]]
+id = "0K8PL8dgaCtEwNAM5LKdr"
+uri = "file://artifacts/legacy-pathways/public/takrouna-bg.png"
+type = "image"
+title = "Māori carving workshop"
+
+[[generated]]
+id = "gAhy1L9Pg0uXJmmXo2AvI"
+uri = "file://artifacts/legacy-pathways/public/portrait-placeholder.png"
+type = "image"
+title = "Soldier portrait placeholder"

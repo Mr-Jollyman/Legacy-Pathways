@@ -3,13 +3,19 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: Legacy Pathways API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: people
+    description: Our People / Roll Call directory
+  - name: tours
+    description: Legacy Tours
+  - name: enquiries
+    description: Contact and enquiry forms
 paths:
   /healthz:
     get:
@@ -24,6 +30,216 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /people:
+    get:
+      operationId: listPeople
+      tags: [people]
+      summary: Search the Our People directory
+      parameters:
+        - name: search
+          in: query
+          schema: { type: string }
+          description: Free-text search across names and service number
+        - name: letter
+          in: query
+          schema: { type: string }
+          description: Filter by first letter of surname (A-Z)
+        - name: war
+          in: query
+          schema: { type: string }
+          description: Filter by war (e.g. WW1, WW2)
+        - name: unit
+          in: query
+          schema: { type: string }
+        - name: teArawa
+          in: query
+          schema: { type: boolean }
+          description: Only people with confirmed Te Arawa affiliation
+        - name: ohinemutu
+          in: query
+          schema: { type: boolean }
+          description: Only people with a confirmed Ōhinemutu connection
+        - name: buriedAtMuruika
+          in: query
+          schema: { type: boolean }
+          description: Only people buried at Muruika Urupā
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [surname, givenName, serviceNumber]
+        - name: page
+          in: query
+          schema: { type: integer, minimum: 1, default: 1 }
+        - name: pageSize
+          in: query
+          schema: { type: integer, minimum: 1, maximum: 60, default: 24 }
+      responses:
+        "200":
+          description: Paginated directory results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PeoplePage"
+  /people/featured:
+    get:
+      operationId: getFeaturedPeople
+      tags: [people]
+      summary: Administrator-selected featured profiles
+      responses:
+        "200":
+          description: Featured profiles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PersonSummary"
+  /people/stats:
+    get:
+      operationId: getPeopleStats
+      tags: [people]
+      summary: Directory summary statistics
+      responses:
+        "200":
+          description: Counts for the directory
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PeopleStats"
+  /people/{slug}:
+    get:
+      operationId: getPerson
+      tags: [people]
+      summary: Get a full profile by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Full profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Person"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /tours:
+    get:
+      operationId: listTours
+      tags: [tours]
+      summary: List remembrance tours
+      responses:
+        "200":
+          description: Tours
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Tour"
+  /enquiries/contact:
+    post:
+      operationId: submitContactEnquiry
+      tags: [enquiries]
+      summary: Submit a general contact enquiry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactEnquiryInput"
+      responses:
+        "201":
+          description: Received
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionReceipt"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /enquiries/tour:
+    post:
+      operationId: submitTourEnquiry
+      tags: [enquiries]
+      summary: Register interest or enquire about a tour
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TourEnquiryInput"
+      responses:
+        "201":
+          description: Received
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionReceipt"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /enquiries/school:
+    post:
+      operationId: submitSchoolEnquiry
+      tags: [enquiries]
+      summary: Enquire about a school visit or the Te Rau Aroha mobile experience
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SchoolEnquiryInput"
+      responses:
+        "201":
+          description: Received
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionReceipt"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+  /enquiries/story:
+    post:
+      operationId: submitStoryContribution
+      tags: [enquiries]
+      summary: Share a family story or correction (moderated, never auto-published)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StoryContributionInput"
+      responses:
+        "201":
+          description: Received
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionReceipt"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +249,213 @@ components:
           type: string
       required:
         - status
-
+    ErrorMessage:
+      type: object
+      required: [error]
+      properties:
+        error: { type: string }
+    PersonSummary:
+      type: object
+      required: [slug, fullName, verificationStatus, sampleData]
+      properties:
+        slug: { type: string }
+        fullName: { type: string }
+        rank: { type: ["string", "null"] }
+        serviceNumber: { type: ["string", "null"] }
+        war: { type: ["string", "null"] }
+        unit: { type: ["string", "null"] }
+        portraitUrl: { type: ["string", "null"] }
+        shortBio: { type: ["string", "null"] }
+        buriedAtMuruika: { type: boolean }
+        teArawa: { type: boolean }
+        verificationStatus:
+          type: string
+          enum: [verified, awaiting_whanau_review, draft, placeholder]
+        sampleData:
+          type: boolean
+          description: True for demonstration-only placeholder profiles
+    Person:
+      type: object
+      required: [slug, fullName, verificationStatus, sampleData, alternativeNames, campaigns, honours, timeline, sources, galleryUrls]
+      properties:
+        slug: { type: string }
+        fullName: { type: string }
+        alternativeNames:
+          type: array
+          items: { type: string }
+        rank: { type: ["string", "null"] }
+        serviceNumber: { type: ["string", "null"] }
+        war: { type: ["string", "null"] }
+        unit: { type: ["string", "null"] }
+        company: { type: ["string", "null"] }
+        iwi: { type: ["string", "null"] }
+        hapu: { type: ["string", "null"] }
+        teArawa: { type: boolean }
+        birthplace: { type: ["string", "null"] }
+        ohinemutuConnection: { type: boolean }
+        buriedAtMuruika: { type: boolean }
+        graveReference: { type: ["string", "null"] }
+        dateOfBirth: { type: ["string", "null"] }
+        dateOfDeath: { type: ["string", "null"] }
+        enlistmentDetails: { type: ["string", "null"] }
+        campaigns:
+          type: array
+          items: { type: string }
+        honours:
+          type: array
+          items: { type: string }
+        shortBio: { type: ["string", "null"] }
+        fullStory: { type: ["string", "null"] }
+        timeline:
+          type: array
+          items:
+            $ref: "#/components/schemas/TimelineEvent"
+        portraitUrl: { type: ["string", "null"] }
+        galleryUrls:
+          type: array
+          items: { type: string }
+        sources:
+          type: array
+          items:
+            $ref: "#/components/schemas/SourceRef"
+        verificationStatus:
+          type: string
+          enum: [verified, awaiting_whanau_review, draft, placeholder]
+        lastReviewed: { type: ["string", "null"] }
+        sampleData: { type: boolean }
+    TimelineEvent:
+      type: object
+      required: [year, label]
+      properties:
+        year: { type: string }
+        label: { type: string }
+    SourceRef:
+      type: object
+      required: [name]
+      properties:
+        name: { type: string }
+        url: { type: ["string", "null"] }
+        organisation: { type: ["string", "null"] }
+    PeoplePage:
+      type: object
+      required: [items, total, page, pageSize, totalPages]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/PersonSummary"
+        total: { type: integer }
+        page: { type: integer }
+        pageSize: { type: integer }
+        totalPages: { type: integer }
+    PeopleStats:
+      type: object
+      required: [total, byWar, buriedAtMuruika, teArawa, verified]
+      properties:
+        total: { type: integer }
+        byWar:
+          type: array
+          items:
+            $ref: "#/components/schemas/WarCount"
+        buriedAtMuruika: { type: integer }
+        teArawa: { type: integer }
+        verified: { type: integer }
+    WarCount:
+      type: object
+      required: [war, count]
+      properties:
+        war: { type: string }
+        count: { type: integer }
+    Tour:
+      type: object
+      required: [slug, name, category, status, summary, destinations, sampleData]
+      properties:
+        slug: { type: string }
+        name: { type: string }
+        category:
+          type: string
+          enum: [gallipoli, italy, tunisia]
+        status:
+          type: string
+          enum: [proposed, registrations_open, full, completed]
+        summary: { type: string }
+        historicalOverview: { type: ["string", "null"] }
+        destinations:
+          type: array
+          items: { type: string }
+        durationDays: { type: ["integer", "null"] }
+        estimatedPrice: { type: ["string", "null"] }
+        imageUrl: { type: ["string", "null"] }
+        sampleData: { type: boolean }
+    ContactEnquiryInput:
+      type: object
+      required: [name, email, subject, message]
+      properties:
+        name: { type: string, minLength: 1 }
+        email: { type: string, minLength: 3 }
+        phone: { type: string }
+        subject: { type: string, minLength: 1 }
+        message: { type: string, minLength: 1 }
+        website:
+          type: string
+          description: Honeypot field — must be left empty
+    TourEnquiryInput:
+      type: object
+      required: [fullName, email, preferredTour, travellers]
+      properties:
+        fullName: { type: string, minLength: 1 }
+        email: { type: string, minLength: 3 }
+        phone: { type: string }
+        preferredTour: { type: string, minLength: 1 }
+        travellers: { type: integer, minimum: 1 }
+        ageRange: { type: string }
+        connectionToServiceman: { type: string }
+        accessibilityNeeds: { type: string }
+        roomArrangement: { type: string }
+        questions: { type: string }
+        receiveUpdates: { type: boolean }
+        website:
+          type: string
+          description: Honeypot field — must be left empty
+    SchoolEnquiryInput:
+      type: object
+      required: [schoolName, location, contactName, email, programme]
+      properties:
+        schoolName: { type: string, minLength: 1 }
+        location: { type: string, minLength: 1 }
+        contactName: { type: string, minLength: 1 }
+        email: { type: string, minLength: 3 }
+        phone: { type: string }
+        programme:
+          type: string
+          enum: [school_visit, te_rau_aroha, classroom_resources, other]
+        preferredDates: { type: string }
+        studentCount: { type: integer }
+        studentAges: { type: string }
+        notes: { type: string }
+        website:
+          type: string
+          description: Honeypot field — must be left empty
+    StoryContributionInput:
+      type: object
+      required: [name, email, story, publicUseConsent]
+      properties:
+        name: { type: string, minLength: 1 }
+        email: { type: string, minLength: 3 }
+        phone: { type: string }
+        relationship: { type: string }
+        aboutPerson: { type: string }
+        story: { type: string, minLength: 1 }
+        supportingDetails: { type: string }
+        publicUseConsent: { type: boolean }
+        preferredCredit: { type: string }
+        keepPrivate: { type: boolean }
+        website:
+          type: string
+          description: Honeypot field — must be left empty
+    SubmissionReceipt:
+      type: object
+      required: [id, message]
+      properties:
+        id: { type: integer }
+        message: { type: string }
