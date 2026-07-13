@@ -1,6 +1,10 @@
-# [Project name]
+# Legacy Pathways
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Heritage platform (in planning) for preserving the stories and legacy of Māori servicemen connected with Ōhinemutu, Te Arawa and Muruika Urupā. Full build brief: `attached_assets/Pasted-Build-a-production-ready-website-and-content-management_1783940666003.txt`. Brand logos: `attached_assets/` (Legacy Pathways logo variants + brand board).
+
+## Source harvest dataset
+
+`data/source-harvest/` holds a **private staging dataset** harvested July 2026 from 28maoribattalion.org.nz and armymuseum.co.nz: 6,155 battalion roll records (`roll.json`), three content pages (`pages/`), 23 photos (`images/`), full provenance (`provenance.json`), and `HARVEST_REPORT.md`. **Do not publish any of it until written permission is confirmed.** See `scripts/src/harvest-roll.md` for constraints (Cloudflare protection, Wayback image mirroring) and re-run commands.
 
 ## Run & Operate
 

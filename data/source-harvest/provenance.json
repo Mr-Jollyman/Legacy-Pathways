@@ -1,0 +1,307 @@
+{
+  "generatedAt": "2026-07-13T11:43:12.253Z",
+  "harvestMethod": "automated harvest — rendered page fetches at ~1 req/sec with retries; images from armymuseum.co.nz fetched directly, images from 28maoribattalion.org.nz fetched from Internet Archive (web.archive.org) copies because the origin blocks direct downloads",
+  "usagePolicy": "PRIVATE STAGING ONLY. Do not publish, republish or display any of this material publicly until Legacy Pathways confirms written permission from each source organisation.",
+  "sources": [
+    {
+      "site": "28maoribattalion.org.nz",
+      "organisation": "Manatū Taonga — Ministry for Culture and Heritage (28th Māori Battalion website)",
+      "copyrightStatus": "permission pending — written permission required before any public reuse",
+      "robotsTxt": "allows general crawling; Cloudflare content signal: search=yes, ai-train=no, use=reference"
+    },
+    {
+      "site": "armymuseum.co.nz",
+      "organisation": "National Army Museum Te Mata Toa",
+      "copyrightStatus": "permission pending — written permission required before any public reuse",
+      "robotsTxt": "allows all crawling"
+    },
+    {
+      "site": "web.archive.org",
+      "organisation": "Internet Archive (used only as a mirror for image files already published on 28maoribattalion.org.nz)",
+      "copyrightStatus": "underlying copyright remains with original rights holders"
+    }
+  ],
+  "datasets": [
+    {
+      "file": "roll.json",
+      "records": 6155,
+      "sourceUrl": "https://28maoribattalion.org.nz/roll",
+      "description": "Battalion roll listing: surname, forename(s), war, WW1/WW2 serial numbers, canonical profile URL. Collected from 154 paginated listing pages (?page=0..153). Per-record sourceUrl points to the exact listing page.",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "importMethod": "automated harvest"
+    },
+    {
+      "file": "pages/homepage.json",
+      "sourceUrl": "https://28maoribattalion.org.nz/",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "importMethod": "automated harvest"
+    },
+    {
+      "file": "pages/story-of-the-28th.json",
+      "sourceUrl": "https://28maoribattalion.org.nz/story-of-the-28th",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "importMethod": "automated harvest"
+    },
+    {
+      "file": "pages/armymuseum-education.json",
+      "sourceUrl": "https://www.armymuseum.co.nz/education-programmes/28th-maori-battalion/",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "importMethod": "automated harvest"
+    }
+  ],
+  "images": [
+    {
+      "file": "images/28mb_story-of-about-the-28th.jpg",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/hero/story-of-about-the-28th.jpg",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "story-of-the-28th",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 50945,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_story-of-call-to-arms_0.jpg",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/hero/story-of-call-to-arms_0.jpg",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "story-of-the-28th",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 40509,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_story-of-greece-and-crete.jpg",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/hero/story-of-greece-and-crete.jpg",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "story-of-the-28th",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 30311,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_story-of-desert-fighters.jpg",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/hero/story-of-desert-fighters.jpg",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "story-of-the-28th",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 36112,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_story-of-italian-campaign.jpg",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/hero/story-of-italian-campaign.jpg",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "story-of-the-28th",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 58921,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_story-of-life-in-the-battalion.jpg",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/hero/story-of-life-in-the-battalion.jpg",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "story-of-the-28th",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 56613,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_story-of-home-front.jpg",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/hero/story-of-home-front.jpg",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "story-of-the-28th",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 46278,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_story-of-after-the-war.jpg",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/hero/story-of-after-the-war.jpg",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "story-of-the-28th",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 54941,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_story-of-battalion-diary.jpg",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/hero/story-of-battalion-diary.jpg",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "story-of-the-28th",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 55033,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_story-of-battalion-letters.jpg",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/hero/story-of-battalion-letters.jpg",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "story-of-the-28th",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 37074,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_home-hero.png",
+      "originalUrl": "https://28maoribattalion.org.nz/themes/custom/mbd8/images/home-hero.png",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "homepage",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 508490,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_home-hero-tablet.png",
+      "originalUrl": "https://28maoribattalion.org.nz/themes/custom/mbd8/images/home-hero-tablet.png",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "homepage",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 763696,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_Robert tito.jpg",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/images/Robert%20tito.jpg",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "homepage",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 39105,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_letter.JPG",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/images/letter.JPG",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "homepage",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 241778,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/28mb_Kara (Karaitiana) Aranui - 1940.png",
+      "originalUrl": "https://28maoribattalion.org.nz/sites/default/files/images/Kara%20%28Karaitiana%29%20Aranui%20-%201940.png",
+      "fetchedVia": "web.archive.org",
+      "sourcePage": "homepage",
+      "sourceSite": "28maoribattalion.org.nz",
+      "bytes": 548501,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — 28maoribattalion.org.nz"
+    },
+    {
+      "file": "images/armymuseum_28thMaoriBattalion.jpg",
+      "originalUrl": "https://www.armymuseum.co.nz/wp-content/uploads/2025/12/28thMaoriBattalion.jpg",
+      "fetchedVia": "direct",
+      "sourcePage": "armymuseum-education",
+      "sourceSite": "armymuseum.co.nz",
+      "bytes": 287388,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — armymuseum.co.nz"
+    },
+    {
+      "file": "images/armymuseum_image-1.jpg",
+      "originalUrl": "https://www.armymuseum.co.nz/wp-content/uploads/2025/09/image-1.jpg",
+      "fetchedVia": "direct",
+      "sourcePage": "armymuseum-education",
+      "sourceSite": "armymuseum.co.nz",
+      "bytes": 9240,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — armymuseum.co.nz"
+    },
+    {
+      "file": "images/armymuseum_Map-and-NAM.png",
+      "originalUrl": "https://www.armymuseum.co.nz/wp-content/uploads/2025/09/Map-and-NAM.png",
+      "fetchedVia": "direct",
+      "sourcePage": "armymuseum-education",
+      "sourceSite": "armymuseum.co.nz",
+      "bytes": 29083,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — armymuseum.co.nz"
+    },
+    {
+      "file": "images/armymuseum_NAM-Logo-1.png",
+      "originalUrl": "https://www.armymuseum.co.nz/wp-content/uploads/2025/09/NAM-Logo-1.png",
+      "fetchedVia": "direct",
+      "sourcePage": "armymuseum-education",
+      "sourceSite": "armymuseum.co.nz",
+      "bytes": 13687,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — armymuseum.co.nz"
+    },
+    {
+      "file": "images/armymuseum_National-Army-Musum-1.png",
+      "originalUrl": "https://www.armymuseum.co.nz/wp-content/uploads/2025/09/National-Army-Musum-1.png",
+      "fetchedVia": "direct",
+      "sourcePage": "armymuseum-education",
+      "sourceSite": "armymuseum.co.nz",
+      "bytes": 15259,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — armymuseum.co.nz"
+    },
+    {
+      "file": "images/armymuseum_20212405_AGS_NAM_250-rhwrecubh5sgpia97uiynx2vej7cpdz14mxjsx9vcw.jpg",
+      "originalUrl": "https://www.armymuseum.co.nz/wp-content/uploads/elementor/thumbs/20212405_AGS_NAM_250-rhwrecubh5sgpia97uiynx2vej7cpdz14mxjsx9vcw.jpg",
+      "fetchedVia": "direct",
+      "sourcePage": "armymuseum-education",
+      "sourceSite": "armymuseum.co.nz",
+      "bytes": 205313,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — armymuseum.co.nz"
+    },
+    {
+      "file": "images/armymuseum_family_history_quicklink-rhwrfmwes1jiiefcqwfok3ggiewc6k1vmywcbhdkw0.jpg",
+      "originalUrl": "https://www.armymuseum.co.nz/wp-content/uploads/elementor/thumbs/family_history_quicklink-rhwrfmwes1jiiefcqwfok3ggiewc6k1vmywcbhdkw0.jpg",
+      "fetchedVia": "direct",
+      "sourcePage": "armymuseum-education",
+      "sourceSite": "armymuseum.co.nz",
+      "bytes": 200718,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — armymuseum.co.nz"
+    },
+    {
+      "file": "images/armymuseum_Homepage-quicklinks-donating-objects-1-scaled-rhwrhhmy9a2vepqex7a6z4m6orred2etk57te4mmm8.jpg",
+      "originalUrl": "https://www.armymuseum.co.nz/wp-content/uploads/elementor/thumbs/Homepage-quicklinks-donating-objects-1-scaled-rhwrhhmy9a2vepqex7a6z4m6orred2etk57te4mmm8.jpg",
+      "fetchedVia": "direct",
+      "sourcePage": "armymuseum-education",
+      "sourceSite": "armymuseum.co.nz",
+      "bytes": 81722,
+      "status": "ok",
+      "dateAccessed": "2026-07-13T11:43:12.253Z",
+      "copyrightStatus": "permission pending — armymuseum.co.nz"
+    }
+  ]
+}

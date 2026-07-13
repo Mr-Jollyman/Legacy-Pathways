@@ -1,0 +1,1 @@
+- [Harvesting 28maoribattalion.org.nz](harvest-28mb-sources.md) — Cloudflare blocks plain fetch/curl; use rendered webFetch for HTML and web.archive.org `web/2024id_/` mirrors for images; persist long-loop progress to disk.

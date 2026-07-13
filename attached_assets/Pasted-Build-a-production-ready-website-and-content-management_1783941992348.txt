@@ -1,0 +1,575 @@
+Build a production-ready website and content-management platform for a Māori organisation called Legacy Pathways.
+Project purpose
+Legacy Pathways exists to preserve, present and develop the stories and legacy of Māori servicemen, particularly those connected with Ōhinemutu, Te Arawa and Muruika Urupā.
+The website must operate as:
+1. A public history and education platform.
+2. A searchable roll call and soldier-story archive.
+3. A future QR-code destination for graves at Muruika Urupā.
+4. An ecommerce storefront.
+5. A media and podcast platform.
+6. A tour-information and enquiry website.
+7. A public home for the Takrouna carving project.
+This should feel like a serious, modern heritage organisation, not a tourism-template website or a generic “Māori-themed” website.
+
+Design direction
+Create a design that is:
+* Respectful, contemporary and authoritative.
+* Story-led and image-led.
+* Easy for kaumātua, whānau, students and general visitors to navigate.
+* Strong on mobile because QR-code visitors will usually arrive by phone.
+* Inspired by remembrance, whakapapa, military history, whenua and intergenerational legacy.
+* Restrained rather than decorative.
+Avoid generic koru borders, random Māori patterns, token cultural decoration or invented symbolism.
+Until Legacy Pathways supplies final branding, use a temporary visual system based on:
+* Charcoal and near-black. And white and red
+* Strong editorial typography.
+* Generous whitespace.
+* Large archival photographs .
+Support macrons and te reo Māori correctly throughout the website. Do not automatically invent Māori translations. Include editable bilingual fields so approved translations can be added later.
+Main navigation
+Create the following primary navigation:
+* Home
+* Our People
+* Education
+* Stories & Media
+* Legacy Tours
+* Takrouna Carving
+* Shop
+* About
+* Contact
+Use “Our People” as the public-facing name for the soldier archive, with “Roll Call” as a supporting heading.
+1. Home page
+Build a strong, emotionally engaging home page with:
+Hero section
+* Full-width historic or contemporary image placeholder.
+* Organisation name: Legacy Pathways.
+* Suggested temporary heading: “Their service. Their stories. Their legacy.”
+* Introductory copy explaining the connection between Te Arawa servicemen, Muruika Urupā and future generations.
+* Primary button: “Explore Our People.”
+* Secondary button: “Discover Our Work.”
+Featured pathways
+Create six visual cards:
+1. Our People
+2. Education
+3. Stories and Podcasts
+4. Legacy Tours
+5. Takrouna Carving Project
+6. Shop
+Featured soldier stories
+Show three administrator-selected profiles from the soldier database.
+Muruika Urupā introduction
+Explain that Muruika Urupā at Ōhinemutu is the resting place and place of remembrance for generations of servicemen.
+Include a button to learn more, but do not publish detailed grave locations until the organisation approves them.
+Education feature
+Promote:
+* Books and educational resources.
+* School journals.
+* Classes and school programmes.
+* The Te Rau Aroha mobile education experience.
+* Screenings or educational material associated with Sgt. Haane, subject to licensing.
+Latest media
+Display the newest podcast, video or written story.
+Tours feature
+Promote upcoming or proposed remembrance tours to:
+* Gallipoli.
+* Italy.
+* Tunisia or Takrouna when offered.
+Calls to action
+Include:
+* Share a family story.
+* Enquire about a school visit.
+* Register interest in a tour.
+* Support the carving project.
+* Visit the shop.
+2. Our People and Roll Call
+Create a searchable directory dedicated initially to servicemen connected with:
+* Ōhinemutu.
+* Te Arawa.
+* Muruika Urupā.
+* Relevant Māori military units and conflicts.
+Directory features
+Include:
+* Search by first name, surname, alternative name or service number.
+* Alphabetical browsing.
+* Filters for war, unit, company, iwi, hapū, hometown, campaign and burial status.
+* Filter for “Buried at Muruika Urupā.”
+* Filter for “Te Arawa.”
+* Filter for “Ōhinemutu connection.”
+* Sort by surname, given name or service number.
+* Clear-filter button.
+* Paginated results.
+* Mobile-friendly results.
+* A useful empty-state message.
+* Search-engine-indexable profile pages.
+Individual profile URLs
+Each person must have a permanent, readable URL such as:
+/our-people/haane-manahi
+These URLs must remain stable because they will eventually be encoded into physical QR codes placed on or near graves.
+Individual profile design
+Each profile should support:
+* Full name.
+* Alternative or known names.
+* Portrait or archival photograph.
+* Service number.
+* Rank.
+* War.
+* Unit and company.
+* Iwi and hapū.
+* Te Arawa affiliation.
+* Birthplace or hometown.
+* Ōhinemutu connection.
+* Muruika Urupā status.
+* Grave or memorial reference, when approved.
+* Date of birth.
+* Date of death.
+* Enlistment and discharge details.
+* Campaigns and locations served.
+* Honours and awards.
+* Short biography.
+* Full story.
+* Timeline.
+* Image gallery.
+* Audio memories.
+* Video.
+* Related podcast episodes.
+* Related educational resources.
+* Related people or whānau connections.
+* Source list and acknowledgements.
+* Date last reviewed.
+* Verification status.
+* Button to submit additional information.
+* Button to report a correction.
+* Button to share the profile.
+Do not invent missing information.
+Clearly display labels such as:
+* Verified
+* Awaiting whānau review
+* Draft
+* Additional information welcomed
+Soldier database structure
+Create an extensible database with tables or models for:
+* People
+* Names and aliases
+* Service records
+* Military units
+* Campaigns
+* Iwi
+* Hapū
+* Locations
+* Burial and memorial records
+* Stories
+* Sources
+* Media
+* Family contributions
+* Permissions
+* QR codes
+* Related people
+* Editorial revisions
+* Administrators
+Every historical fact should be capable of being linked to a source.
+Maintain provenance fields including:
+* Source name.
+* Source URL.
+* Source organisation.
+* Date accessed.
+* Imported or manually entered.
+* Copyright or usage status.
+* Permission status.
+* Internal verification notes.
+* Administrator who approved it.
+Historical data import
+The organisation intends to use information associated with the public roll at:
+28maoribattalion.org.nz/roll
+Do not immediately scrape, duplicate or republish its text, images, oral histories or complete database.
+First build a safe import architecture that can be activated only after the organisation confirms written permission and the permitted scope of reuse.
+Initial import method
+For the first version:
+* Build an administrator CSV import tool.
+* Provide a downloadable CSV template.
+* Allow approved public facts to be entered manually.
+* Allow source links to point visitors back to the original profile.
+* Include duplicate detection using name, service number and source URL.
+* Display an import preview before saving.
+* Require an administrator to approve imported records.
+* Log all imports and changes.
+Future authorised importer
+Prepare, but do not automatically run, an import script capable of:
+* Following pagination.
+* Reading basic roll fields.
+* Reading authorised profile fields.
+* Rate limiting requests.
+* Respecting robots.txt, copyright restrictions and terms of use.
+* Saving source URLs and import timestamps.
+* Updating records without overwriting manually verified information.
+* Producing an error and conflict report.
+* Stopping safely if the source layout changes.
+Do not run the importer without an environment variable such as:
+AUTHORISED_ROLL_IMPORT=true
+Set this to false by default.
+Selecting Te Arawa and Ōhinemutu people
+Do not assume that automated text matching can reliably establish whakapapa, iwi affiliation or burial location.
+Create an administrator workflow where the system can suggest possible connections based on:
+* Recorded addresses.
+* Next-of-kin addresses.
+* Place names.
+* Existing profile text.
+* Known iwi or company information.
+* Approved lists supplied by Legacy Pathways.
+Every suggested association must be manually confirmed before public publication.
+QR-code system
+Build a QR-management section inside the admin dashboard.
+For each approved profile, allow administrators to:
+* Generate a permanent QR code.
+* Download it as SVG and high-resolution PNG.
+* Download a print-ready PDF label.
+* Include the person’s name and service number.
+* Link it to the permanent public profile URL.
+* Disable a QR destination without deleting the profile.
+* Redirect an old URL if a slug changes.
+* Record when and where a QR code was installed.
+* Add an internal grave or memorial reference.
+* View privacy-conscious scan counts.
+Do not include third-party advertising, trackers or unnecessary cookies on QR landing pages.
+Make profile pages load quickly on weak mobile connections.
+Whānau story contribution workflow
+Create a public “Share a Story” form.
+Allow people to submit:
+* Their name.
+* Email.
+* Phone, optional.
+* Relationship to the serviceman.
+* Person the information relates to.
+* Written memory or correction.
+* Photograph.
+* Audio recording.
+* Video link.
+* Document.
+* Source or supporting details.
+* Permission for public use.
+* Preferred credit wording.
+* Request for the contribution to remain private.
+Submissions must not publish automatically.
+Create a moderation queue where administrators can:
+* Review the submission.
+* Contact the contributor.
+* Approve or reject it.
+* Add it to a profile.
+* Edit only with appropriate approval.
+* Record usage permission.
+* Keep private family contact details hidden from the public.
+* Maintain an audit trail.
+Include clear privacy and consent wording.
+3. Education section
+Create an Education hub for schools, rangatahi, whānau and community groups.
+Education landing page
+Include sections for:
+* Books.
+* School journals.
+* Teacher resources.
+* Classroom activities.
+* Workshops and classes.
+* School visits.
+* Te Rau Aroha mobile education experience.
+* Sgt. Haane educational material.
+* Stories of those who served.
+* Downloadable resources.
+* Enquiries and bookings.
+Resource types
+Allow administrators to create:
+* Free downloads.
+* Paid resources.
+* Printed books.
+* Lesson plans.
+* Teacher guides.
+* Student worksheets.
+* Videos.
+* Audio.
+* Interactive activities.
+* External links.
+* Event or class listings.
+Add filters for:
+* School year level.
+* Subject.
+* Conflict or campaign.
+* Resource type.
+* Free or paid.
+* Duration.
+* Language.
+Te Rau Aroha mobile education experience
+Create a dedicated page for a proposed travelling education truck or mobile exhibition inspired by Te Rau Aroha.
+The page should explain that the vehicle can visit schools and communities and may contain:
+* A large screen.
+* Film and documentary material.
+* Stories of Māori servicemen.
+* Interactive education content.
+* Photographs and archival material.
+* Facilitated discussions.
+* Activities for children and young people.
+Include:
+* Image-gallery placeholders.
+* Programme information.
+* Suitable age groups.
+* Regional availability.
+* Accessibility information.
+* School enquiry form.
+* Preferred dates.
+* School name and location.
+* Number and age of students.
+* Teacher contact details.
+Do not claim that screening rights for Sgt. Haane have been secured. Embed only officially supplied trailers or licensed material.
+4. Shop
+Integrate Shopify for ecommerce.
+The initial product range will begin with remembrance poppies and later expand into:
+* Hats.
+* T-shirts.
+* Apparel.
+* Books.
+* Educational resources.
+* Prints.
+* Memorabilia.
+* Supporter merchandise.
+Use Shopify as the source of truth for:
+* Products.
+* Variants.
+* Prices.
+* Inventory.
+* Discounts.
+* Tax.
+* Shipping.
+* Checkout.
+* Orders.
+Build the website so it can use either:
+* Shopify Storefront Web Components for the simplest initial implementation, or
+* Shopify Storefront API for a more customised headless storefront.
+Use environment variables for Shopify credentials.
+The shop must include:
+* Product listing.
+* Collections.
+* Product pages.
+* Size and variant selection.
+* Cart.
+* Official Shopify checkout.
+* Product search.
+* Stock status.
+* Related products.
+* Shipping and returns information.
+* Clear indication where proceeds support Legacy Pathways projects.
+For development, show attractive placeholder products but clearly label them as sample content. Do not create fake real-world prices or claim products are available.
+5. Stories, video and podcasts
+Create a combined media hub containing:
+* Podcast episodes.
+* Video stories.
+* Interviews.
+* Short documentaries.
+* Written stories.
+* Photo essays.
+* News and project updates.
+Podcast functionality
+Each podcast episode page should support:
+* Title.
+* Episode number.
+* Guest.
+* Description.
+* Cover image.
+* Embedded audio player.
+* Spotify link.
+* Apple Podcasts link.
+* YouTube link.
+* Transcript.
+* Related soldier profiles.
+* Related campaigns.
+* Related educational resources.
+* Publication date.
+* Sharing metadata.
+Interview framework
+Create a reusable page containing suggested open-ended oral-history questions, including:
+* What do you remember being told about their childhood?
+* What led them to enlist?
+* What stories did they share about their service?
+* What did they avoid speaking about?
+* How did their service affect the family?
+* What were they like after returning home?
+* How did the community remember them?
+* What objects, photographs or letters remain?
+* What would you like future generations to know about them?
+* What part of their story still needs to be told?
+Allow this question set to be edited in the admin dashboard.
+6. Legacy Tours
+Create a tours landing page covering remembrance and educational journeys.
+Initial tour categories:
+Gallipoli
+Explain its connection to the First World War Māori Contingent and later Māori Pioneer Battalion history.
+Italy
+Cover locations associated with the 28th Māori Battalion, potentially including:
+* Orsogna.
+* Cassino.
+* Sora.
+* Faenza.
+* Florence.
+* Trieste.
+All itineraries must be presented as proposed until confirmed.
+Tunisia and Takrouna
+Prepare a future tour category for Takrouna and other relevant North African locations.
+Tour pages
+Each tour should support:
+* Tour name.
+* Status: proposed, registrations open, full or completed.
+* Dates.
+* Duration.
+* Destinations.
+* Historical overview.
+* Draft itinerary.
+* What is included.
+* What is excluded.
+* Estimated or confirmed price.
+* Fitness and accessibility considerations.
+* Images.
+* Map.
+* Tour leader details.
+* Frequently asked questions.
+* Terms and conditions.
+* Enquiry form.
+* Register-interest form.
+Tour enquiry flow
+Collect:
+* Full name.
+* Email.
+* Phone.
+* Preferred tour.
+* Number of travellers.
+* Age range, optional.
+* Connection to a serviceman, optional.
+* Accessibility needs.
+* Preferred room arrangement.
+* General questions.
+* Permission to receive tour updates.
+Save enquiries to the database and email an administrator.
+Include enquiry statuses:
+* New.
+* Contacted.
+* Interested.
+* Waitlisted.
+* Confirmed.
+* Not proceeding.
+Do not process tour payments in the initial version.
+7. Takrouna carving project
+Create a dedicated storytelling and fundraising page for a Māori carving intended to be created in Aotearoa and transported to Takrouna, Tunisia, where Māori soldiers fought during the Second World War.
+Use the working project title supplied by Legacy Pathways, but make it easily editable because the final spelling and approved te reo Māori name still need confirmation.
+The page should include:
+* Project overview.
+* Why Takrouna matters.
+* Connection to Haane Manahi and the Māori Battalion.
+* Purpose and meaning of the carving.
+* Carver profile.
+* Design-development section.
+* Materials.
+* Project timeline.
+* Photographs and videos.
+* Transport and installation plans.
+* Partnerships.
+* News updates.
+* Project budget or fundraising target, optional.
+* Sponsor acknowledgements.
+* Button to support the project.
+* Contact form for partners and sponsors.
+Create a visual project timeline with stages such as:
+1. Consultation.
+2. Design.
+3. Timber or material selection.
+4. Carving.
+5. Community presentation.
+6. Transport to Tunisia.
+7. Installation.
+8. Dedication ceremony.
+Do not invent cultural meanings for the carving. All design descriptions and symbolism must be entered by the carver or an approved Legacy Pathways administrator.
+About section
+Include:
+* Organisation story.
+* Mission.
+* People and governance.
+* Partners.
+* Supporters.
+* Contact details.
+* Data and editorial principles.
+* Copyright and permissions.
+* Privacy policy.
+* Terms of use.
+Do not invent trustees, staff, iwi endorsements, partners or funding relationships.
+
+SEO
+Implement:
+* Unique page titles and descriptions.
+* Canonical URLs.
+* Open Graph metadata.
+* Social-sharing images.
+* XML sitemap.
+* Robots.txt.
+* Breadcrumbs.
+* Structured data for people, articles, podcasts, products and events where appropriate.
+* Fast image loading.
+* Descriptive alt text fields.
+* Clean URLs.
+* Redirect management.
+Do not expose draft profiles or private family information to search engines.
+Analytics and privacy
+Prepare integrations for:
+* Google Analytics 4.
+* Google Search Console.
+* Shopify analytics.
+* Privacy-conscious QR scan analytics.
+Load analytics only when environment variables are supplied.
+Provide:
+* Privacy policy placeholder.
+* Cookie controls where legally required.
+* Spam protection.
+* Rate limiting.
+* Secure file-upload validation.
+* Honeypot or CAPTCHA protection on public forms.
+Accessibility
+Ensure:
+* Keyboard navigation.
+* Visible focus states.
+* Sufficient contrast.
+* Screen-reader labels.
+* Captions and transcripts for media.
+* Large touch targets.
+* Clear form errors.
+* Accessible tables and filters.
+* No autoplaying audio.
+* Respect for reduced-motion settings.
+Initial sample content
+Do not fabricate real soldier biographies, whakapapa, awards or military history.
+For development:
+* Use clearly labelled placeholder profiles.
+* Use generic image placeholders.
+* Create sample education resources marked “Demonstration only.”
+* Create proposed tour records marked “Draft.”
+Required first build
+Do not attempt every advanced integration at once.
+Build Phase 1 first:
+1. Global design system.
+2. Header and footer.
+3. Home page.
+4. Our People directory.
+5. One reusable profile template.
+6. Education landing page.
+7. Media landing page.
+8. Tours landing page.
+9. Carving-project landing page.
+10. Shopify shop placeholder.
+11. Contact and enquiry forms.
+12. Responsive testing.
+13. Accessibility check.
+14. SEO foundations.
+After completing Phase 1:
+* Run the application.
+* Fix all TypeScript, database and runtime errors.
+* Test desktop and mobile layouts.
+* Test every form.
+* Confirm private records cannot be accessed publicly.
+* Provide a clear summary of what has been completed.
+* List required credentials and external approvals.
+* List Phase 2 recommendations.
+* Do not claim that integrations are working unless they have been tested.
+
+
