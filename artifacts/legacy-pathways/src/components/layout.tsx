@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { href: "/stories", label: "Stories & Podcasts" },
   { href: "/tours", label: "Legacy Tours" },
   { href: "/takrouna", label: "Takrouna Carving" },
-  { href: "/shop", label: "Shop" },
+  { href: "/shop", label: "Memorabilia / Shop" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -99,7 +99,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               <li><Link href="/share-a-story" className="hover:text-white transition-colors">Share a Story</Link></li>
-              <li><Link href="/shop" className="hover:text-white transition-colors">Shop</Link></li>
+              <li><Link href="/shop" className="hover:text-white transition-colors">Memorabilia / Shop</Link></li>
             </ul>
           </div>
         </div>

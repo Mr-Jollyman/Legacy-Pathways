@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Shop() {
   usePageMeta({
-    title: "Shop",
+    title: "Memorabilia / Shop",
     description: "Support Legacy Pathways projects by purchasing remembrance items."
   });
 
@@ -19,7 +19,7 @@ export default function Shop() {
     <Layout>
       <div className="bg-secondary text-secondary-foreground py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">Shop</h1>
+          <h1 className="text-4xl md:text-5xl font-serif mb-4">Memorabilia / Shop</h1>
           <p className="text-lg text-muted max-w-2xl font-serif">
             All proceeds directly support the ongoing work of Legacy Pathways, including educational resources and the Takrouna carving project.
           </p>
