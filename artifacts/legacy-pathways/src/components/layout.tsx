@@ -6,7 +6,6 @@ import headerLogo from "../assets/lp-header-logo-transparent.png";
 import badgeLogoWhite from "../assets/lp-badge-white.png";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
   { href: "/our-people", label: "Our People" },
   { href: "/education", label: "Education" },
   { href: "/stories", label: "Stories & Podcasts" },
