@@ -25,7 +25,7 @@ export default function Home() {
             alt="Solemn memorial landscape" 
             className="w-full h-full object-cover opacity-50 grayscale"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/10 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent"></div>
         </div>
         
         <div className="container relative z-10 px-4 pt-20 pb-32 mx-auto">
