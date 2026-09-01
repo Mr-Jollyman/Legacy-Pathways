@@ -34,7 +34,7 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-serif text-white leading-tight mb-6">
               Their service.<br />
               Their stories.<br />
-              <span className="text-gray-400">Their legacy.</span>
+              <span className="text-white">Their legacy.</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl font-serif">
               Connecting Te Arawa servicemen, Muruika Urupā, and future generations through respectful remembrance and shared history.
